@@ -1,5 +1,6 @@
 ---
-import { LOCALE, SITE } from "@config";
+import GoogleAnalytics from "@components/GoogleAnalytics.astro";
+import { LOCALE, SITE, ANALYTICS } from "@config";
 import "@styles/base.css";
 import { ViewTransitions } from "astro:transitions";
 
@@ -108,6 +109,12 @@ const socialImageURL = new URL(
     <ViewTransitions />
 
     <script is:inline src="/toggle-theme.js"></script>
+
+    {
+      ANALYTICS.enable && (
+        <GoogleAnalytics measurementId={ANALYTICS.measurementId} />
+      )
+    }
   </head>
   <body>
     <slot />

@@ -23,6 +23,11 @@ export const LOGO_IMAGE = {
   height: 46,
 };
 
+export const ANALYTICS = {
+  enable: true,
+  measurementId: "G-VS87PQP0YV",
+};
+
 export const SOCIALS: SocialObjects = [
   {
     name: "Github",

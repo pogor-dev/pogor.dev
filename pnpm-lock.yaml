@@ -8,6 +8,9 @@ dependencies:
   '@astrojs/check':
     specifier: ^0.7.0
     version: 0.7.0(prettier-plugin-astro@0.14.0)(prettier@3.2.5)(typescript@5.4.5)
+  '@astrojs/partytown':
+    specifier: ^2.1.0
+    version: 2.1.0
   '@astrojs/rss':
     specifier: ^4.0.6
     version: 4.0.6
@@ -197,6 +200,13 @@ packages:
       vfile: 6.0.1
     transitivePeerDependencies:
       - supports-color
+
+  /@astrojs/partytown@2.1.0:
+    resolution: {integrity: sha512-9fjvTx2hTQpirUh1HnZZtFQaBz2R5ixrrmU/Zam3VZ9CoR3frqtnqg/Dt/i5C3UAlwiN0i8VuKxPx5cHP8yY5A==}
+    dependencies:
+      '@builder.io/partytown': 0.10.2
+      mrmime: 2.0.0
+    dev: false
 
   /@astrojs/prism@3.1.0:
     resolution: {integrity: sha512-Z9IYjuXSArkAUx3N6xj6+Bnvx8OdUSHA8YoOgyepp3+zJmtVYJIl/I18GozdJVW1p5u/CNpl3Km7/gwTJK85cw==}
@@ -400,6 +410,7 @@ packages:
   /@babel/highlight@7.24.6:
     resolution: {integrity: sha512-2YnuOp4HAk2BsBrJJvYCbItHx0zWscI1C3zgWkz+wDyD9I7GIVrfnLyrR4Y1VR+7p+chAEcrgRQYZAGIKMV7vQ==}
     engines: {node: '>=6.9.0'}
+    requiresBuild: true
     dependencies:
       '@babel/helper-validator-identifier': 7.24.6
       chalk: 2.4.2
@@ -487,6 +498,12 @@ packages:
       '@babel/helper-string-parser': 7.24.6
       '@babel/helper-validator-identifier': 7.24.6
       to-fast-properties: 2.0.0
+
+  /@builder.io/partytown@0.10.2:
+    resolution: {integrity: sha512-A9U+4PREWcS+CCYzKGIPovtGB/PBgnH/8oQyCE6Nr9drDJk6cMPpLQIEajpGPmG9tYF7N3FkRvhXm/AS9+0iKg==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
+    dev: false
 
   /@commitlint/config-validator@19.0.3:
     resolution: {integrity: sha512-2D3r4PKjoo59zBc2auodrSCaUnCSALCx54yveOFwwP/i2kfEAQrygwOleFWswLqK0UL/F9r07MFi5ev2ohyM4Q==}
