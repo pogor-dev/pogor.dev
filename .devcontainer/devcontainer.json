@@ -3,6 +3,8 @@
 {
   "name": "pogor.dev",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+  "containerUser": "node",
+  "postCreateCommand": "pnpm config set store-dir /home/node/.local/share/pnpm/stores",
   "features": {
     "ghcr.io/devcontainers-contrib/features/pnpm:2": {}
   },
