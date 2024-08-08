@@ -3,10 +3,12 @@ import type { Site, SocialObjects } from "./types";
 export const SITE: Site = {
   website: "https://pogor.dev/",
   author: "Victor Pogor",
+  profile: "https://pogor.dev/",
   desc: "Personal blog about software development.",
   title: "pogor.dev",
   ogImage: "pogor-dev.jpg",
   lightAndDarkMode: true,
+  postPerIndex: 4,
   postPerPage: 3,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
 };
