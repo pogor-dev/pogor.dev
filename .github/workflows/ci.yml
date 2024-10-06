@@ -40,10 +40,10 @@ jobs:
         run: pnpm install
 
       - name: "🔎 Lint code"
-        run: npm run lint:check
+        run: pnpm run lint
 
       - name: "📝 Checking code format"
-        run: npm run format:check
+        run: pnpm run format:check
 
       - name: "🚀 Build the project"
-        run: npm run build
+        run: pnpm run build

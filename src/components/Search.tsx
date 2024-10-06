@@ -1,15 +1,14 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import Fuse from "fuse.js";
 import { useEffect, useRef, useState, useMemo, type FormEvent } from "react";
 import Card from "@components/Card";
 import type { CollectionEntry } from "astro:content";
 
-export interface SearchItem {
+export type SearchItem = {
   title: string;
   description: string;
   data: CollectionEntry<"blog">["data"];
   slug: string;
-}
+};
 
 interface Props {
   searchList: SearchItem[];
@@ -51,10 +50,7 @@ export default function SearchBar({ searchList }: Props) {
 
     // put focus cursor at the end of the string
     setTimeout(function () {
-      if (!inputRef.current) {
-        return;
-      }
-      inputRef.current.selectionStart = inputRef.current.selectionEnd =
+      inputRef.current!.selectionStart = inputRef.current!.selectionEnd =
         searchStr?.length || 0;
     }, 50);
   }, []);

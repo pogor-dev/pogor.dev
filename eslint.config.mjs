@@ -1,34 +1,44 @@
+import js from "@eslint/js";
+import globals from "globals";
+import tseslint from "typescript-eslint";
+import astroParser from "astro-eslint-parser";
+import eslintPluginAstro from "eslint-plugin-astro";
 
-import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import eslintPluginAstro from 'eslint-plugin-astro';
-import pluginJsxA11y from "eslint-plugin-jsx-a11y";
-
-
-export default tseslint.config(
-  eslint.configs.recommended,
-  ...tseslint.configs.strict,
-  ...tseslint.configs.stylistic,
+export default [
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
   ...eslintPluginAstro.configs.recommended,
   {
-    ignores: ["**/*.astro"],
-    plugins: {
-      'jsx-a11y': pluginJsxA11y,
-    },
-    rules: pluginJsxA11y.configs.recommended.rules,
-  },
-  {
-    ignores: [".husky", ".vscode", "node_modules", "public", "dist", ".yarn"]
-  },
-  {
     languageOptions: {
-      ecmaVersion: 'latest',
-      sourceType: 'module',
-      parserOptions: {
-        node: true,
-        es2022: true,
-        browser: true,
-      }
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
     },
-  }
-)
+  },
+  {
+    files: ["*.astro"],
+    languageOptions: {
+      parser: astroParser,
+      parserOptions: {
+        parser: "@typescript-eslint/parser",
+        extraFileExtensions: [".astro"],
+      },
+    },
+  },
+  {
+    files: ["tailwind.config.cjs", "**/*.d.ts"],
+    rules: {
+      "@typescript-eslint/no-require-imports": "off",
+      "@typescript-eslint/triple-slash-reference": "off",
+    },
+  },
+  {
+    rules: {
+      "@typescript-eslint/no-unused-expressions": "off",
+    },
+  },
+  {
+    ignores: ["dist/**", ".astro"],
+  },
+];

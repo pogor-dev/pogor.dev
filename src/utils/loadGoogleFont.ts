@@ -1,11 +1,11 @@
 import type { FontStyle, FontWeight } from "satori";
 
-export interface FontOptions {
+export type FontOptions = {
   name: string;
   data: ArrayBuffer;
   weight: FontWeight | undefined;
   style: FontStyle | undefined;
-}
+};
 
 async function loadGoogleFont(
   font: string,
@@ -41,7 +41,7 @@ async function loadGoogleFont(
 async function loadGoogleFonts(
   text: string
 ): Promise<
-  { name: string; data: ArrayBuffer; weight: number; style: string }[]
+  Array<{ name: string; data: ArrayBuffer; weight: number; style: string }>
 > {
   const fontsConfig = [
     {
