@@ -1,0 +1,45 @@
+name: "⚙️ Build and Upload Artifact Reusable Workflow"
+on:
+  workflow_call: # Reusable workflow
+    inputs:
+      upload_artifact:
+        type: boolean
+        required: false
+        description: "Whether to upload build artifact. Used in the deploy job."
+jobs:
+  build:
+    name: "⚙️ Build"
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    permissions:
+      contents: read
+    env:
+      NODE_VERSION: 18.x
+    steps:
+      - name: "☁️ Checkout repository"
+        uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        name: "🔧 Setup pnpm"
+        with:
+          version: 8
+          run_install: false
+      - name: "🔧 Setup Node.js ${{ env.NODE_VERSION }}"
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+      - name: "📦 Install dependencies"
+        run: pnpm install
+      - name: "🔎 Lint code"
+        run: pnpm run lint
+      - name: "📝 Checking code format"
+        run: pnpm run format:check
+      - name: "⚙️ Build the project"
+        run: pnpm run build
+      - name: "📦 Upload build artifact"
+        if: ${{ inputs.upload_artifact }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifact
+          path: ./dist
