@@ -2,7 +2,7 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
   "name": "pogor.dev",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bullseye",
   "containerUser": "node",
   "postCreateCommand": "pnpm config set store-dir /home/node/.local/share/pnpm/stores",
   "features": {

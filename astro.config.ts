@@ -38,7 +38,11 @@ export default defineConfig({
     },
   },
   scopedStyleStrategy: "where",
-  experimental: {
-    contentLayer: true,
+  experimental: {},
+  legacy: {
+    collections: false,
+  },
+  security: {
+    checkOrigin: true,
   },
 });

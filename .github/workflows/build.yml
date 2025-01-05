@@ -14,7 +14,7 @@ jobs:
     permissions:
       contents: read
     env:
-      NODE_VERSION: 18.x
+      NODE_VERSION: 22.x
     steps:
       - name: "☁️ Checkout repository"
         uses: actions/checkout@v4
@@ -31,12 +31,16 @@ jobs:
           cache-dependency-path: pnpm-lock.yaml
       - name: "📦 Install dependencies"
         run: pnpm install
+      - name: "⚙️ Generate content collection types"
+        run: pnpm run sync
       - name: "🔎 Lint code"
         run: pnpm run lint:check
       - name: "📝 Checking code format"
         run: pnpm run format:check
       - name: "🔍 TypeScript check"
         run: pnpm run ts:check
+      - name: "🔍 Astro compiler check"
+        run: pnpm run astro:check
       - name: "⚙️ Build the project"
         run: pnpm run build
       - name: "📦 Upload build artifact"
