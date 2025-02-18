@@ -3,6 +3,7 @@ author: Victor Pogor
 pubDatetime: 2025-02-08T22:42:09.000+10:00
 modDatetime:
 title: Fixing WiFi Issues on AlmaLinux Minimal Install
+description: Learn how to resolve WiFi connection issues on AlmaLinux minimal install by installing the necessary NetworkManager-wifi package.
 slug: fixing-wifi-issues-almalinux-minimal-install
 featured: false
 draft: false
@@ -11,7 +12,6 @@ tags:
   - AlmaLinux
   - WiFi
   - NetworkManager
-description: Learn how to resolve WiFi connection issues on AlmaLinux minimal install by installing the necessary NetworkManager-wifi package.
 ---
 
 ## Table of Contents
@@ -62,7 +62,6 @@ eno1         ethernet  unavailable             --
 
 [root@homelab ~]# nmcli device connect wlp0s20f3
 Error: Failed to add/activate new connection: Device class NMDeviceGeneric had no complete_connection method
-
 ```
 
 The same error is visible here:
@@ -93,7 +92,6 @@ Feb 07 22:46:54 homelab NetworkManager[3107]: <info>  [1720392414.375154] device
 Feb 07 22:46:54 homelab NetworkManager[3107]: <info>  [1720392414.375157] device (wlp0s20f3): Activation: failed for connection 'wlp0s20f3'
 Feb 07 22:46:54 homelab NetworkManager[3107]: <info>  [1720392414.375160] manager: NetworkManager state is now DISCONNECTED
 Feb 07 22:46:54 homelab NetworkManager[3107]: <info>  [1720392414.375164] audit: op="connection-activate" pid=6323 uid=0 result="fail" reason="device class NMDeviceGeneric had no complete_connection method"
-
 ```
 
 ## Mount USB Drive
