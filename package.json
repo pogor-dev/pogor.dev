@@ -8,9 +8,10 @@
     "preview": "astro preview",
     "sync": "astro sync",
     "astro": "astro",
-    "format:check": "prettier --check .",
     "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "astro:check": "astro check",
+    "lint": "eslint . --fix",
     "lint:check": "eslint .",
     "ts:check": "tsc --noEmit"
   },
