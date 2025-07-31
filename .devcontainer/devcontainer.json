@@ -6,7 +6,7 @@
   "containerUser": "node",
   "postCreateCommand": "pnpm config set store-dir /home/node/.local/share/pnpm/stores",
   "features": {
-    "ghcr.io/devcontainers-contrib/features/pnpm:2": {}
+    "ghcr.io/devcontainers-extra/features/pnpm:2": {}
   },
   "customizations": {
     "vscode": {
@@ -24,7 +24,8 @@
         "dbaeumer.vscode-eslint",
         "christian-kohler.npm-intellisense",
         "DavidAnson.vscode-markdownlint",
-        "GitHub.vscode-pull-request-github"
+        "GitHub.vscode-pull-request-github",
+        "fill-labs.dependi"
       ]
     }
   }

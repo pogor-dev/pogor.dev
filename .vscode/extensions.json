@@ -8,7 +8,8 @@
     "dbaeumer.vscode-eslint",
     "christian-kohler.npm-intellisense",
     "DavidAnson.vscode-markdownlint",
-    "GitHub.vscode-pull-request-github"
+    "GitHub.vscode-pull-request-github",
+    "fill-labs.dependi"
   ],
   "unwantedRecommendations": []
 }

@@ -1,0 +1,25 @@
+# .astro-paper-ignore
+# This file works like .gitignore - specify files/patterns to preserve during AstroPaper upgrades
+# Lines starting with # are comments
+# Lines starting with ! are negation patterns (force include)
+
+# Custom configuration files
+src/config.ts
+src/constants.ts
+
+# Your blog content
+src/data/*
+
+# Custom assets
+public/favicon.svg
+public/pogor-dev.jpg
+public/assets/*
+
+# Project files
+README.md
+package.json
+pnpm-lock.yaml
+
+# GitHub actions and workflows
+.github/*
+
