@@ -1,8 +1,10 @@
 // @ts-check
-import { defineConfig, fontProviders } from "astro/config";
+import { defineConfig, fontProviders, memoryCache } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
+  security: { csp: true },
+  markdown: { syntaxHighlight: "shiki", shikiConfig: { theme: "css-variables" } },
   fonts: [
     {
       name: "Inter",
@@ -15,4 +17,11 @@ export default defineConfig({
       provider: fontProviders.fontsource(),
     },
   ],
+  experimental: {
+    rustCompiler: true,
+    queuedRendering: {
+      enabled: true,
+    },
+    cache: { provider: memoryCache() },
+  },
 });
