@@ -10,3 +10,6 @@ trim_trailing_whitespace = true
 
 [*.{js,ts}]
 indent_size = 2
+
+[*.astro]
+indent_size = 2
