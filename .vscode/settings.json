@@ -1,4 +1,13 @@
 {
+  "json.schemaDownload.enable": true,
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "components.json"
+      ],
+      "url": "https://ui.shadcn.com/schema.json"
+    }
+  ],
   "editor.formatOnSave": false,
   "[javascript]": {
     "editor.defaultFormatter": "biomejs.biome",
