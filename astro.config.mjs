@@ -18,7 +18,7 @@ export default defineConfig({
     },
   ],
   experimental: {
-    rustCompiler: true,
+    rustCompiler: false,
     queuedRendering: {
       enabled: true,
     },
