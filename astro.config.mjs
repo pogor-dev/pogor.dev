@@ -1,10 +1,12 @@
 // @ts-check
 import { defineConfig, fontProviders, memoryCache } from "astro/config";
+import solidJs from "@astrojs/solid-js";
 
 // https://astro.build/config
 export default defineConfig({
   security: { csp: true },
   markdown: { syntaxHighlight: "shiki", shikiConfig: { theme: "css-variables" } },
+
   fonts: [
     {
       name: "Inter",
@@ -17,6 +19,7 @@ export default defineConfig({
       provider: fontProviders.fontsource(),
     },
   ],
+  integrations: [solidJs()],
   experimental: {
     rustCompiler: false,
     queuedRendering: {
